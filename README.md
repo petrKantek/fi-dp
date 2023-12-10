@@ -1,6 +1,11 @@
 # fi-dp
 
+### Requirements
 
+
+### C
+
+- libcurl4-openssl-dev
 
 ## Creating CodeQL database
 

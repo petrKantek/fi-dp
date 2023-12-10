@@ -53,19 +53,20 @@ def create_c():
 
     prompt_scenarios = ["secureval", "cwe_definition", "cwe_context"]
     programs = itertools.product(rqs, tools, cwes, prompt_scenarios)
-    commands_to_run = []
-    for rq, tool, cwe, scenario in programs:
-        # call codeql command in python subprocess
+    # commands_to_run = []
+    for rq, tool, cwe, scenario in tqdm(list(programs)):
         dir_path = os.path.join(root_dir, f"rq_{rq}", tool, f"cwe_{cwe}", f"scenario_{scenario}")
         db_path = os.path.join(dir_path, "codeql_database")
-        # print("dir_path: ", dir_path)
-        # print("db_path: ", db_path)
         cmd = f"/home/pkantek/codeql/codeql database create {db_path} --language=cpp --source-root=./{dir_path} --command='make clean all' --overwrite"
-        commands_to_run.append(cmd)
+        try:
+            _ = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        except subprocess.CalledProcessError as e:
+            print("Error executing command:", e)
+            print("Command output (stderr):", e.stderr)
+        # commands_to_run.append(cmd)
 
-    # print(commands_to_run)
 
-    run_parallel_commands(commands_to_run, max_workers=4)
+    # run_parallel_commands(commands_to_run, max_workers=4)
 
 def create_js():
     root_dir = "vulnerability_analysis"
@@ -81,7 +82,7 @@ def create_js():
         db_path = os.path.join(dir_path, "codeql_database")
         # print("dir_path: ", dir_path)
         # print("db_path: ", db_path)
-        cmd = f"C:\\Users\\pkantek\\Downloads\\codeql\\codeql database create {db_path} --language=javascript --source-root=./{dir_path} --overwrite"
+        cmd = f"/home/pkantek/codeql/codeql database create {db_path} --language=javascript --source-root=./{dir_path} --overwrite"
         try:
             result = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             # print(f"dir_path: {dir_path}, Command output:", result.stdout)
@@ -91,4 +92,24 @@ def create_js():
 
     # print(commands_to_run)
 
-create_js()
+def create_csharp():
+    root_dir = "vulnerability_analysis"
+    rqs = range(3, 4)
+    tools = ["chatgpt"]#["copilot", "tabnine", "chatgpt", "codegeex"]
+    cwes = ['787', '79', '89', '78', '20', '22', '352', '434', '476', '287', '190', '502', '77', '119', '798', '918', '362', '94']
+
+    prompt_scenarios = ["secureval", "cwe_definition", "cwe_context"]
+    programs = itertools.product(rqs, tools, cwes, prompt_scenarios)
+    for rq, tool, cwe, scenario in tqdm(list(programs)):
+        dir_path = os.path.join(root_dir, f"rq_{rq}", tool, f"cwe_{cwe}", f"scenario_{scenario}")
+        db_path = os.path.join(dir_path, "codeql_database")
+        pre_cmd_win = f"Remove-Item -Path {db_path} -Recurse -ErrorAction SilentlyContinue";
+        pre_cmd_li = f"rm -rf {db_path}";
+        cmd = f"{pre_cmd_win}; /home/pkantek/codeql/codeql database create {db_path} --language=csharp --source-root=./{dir_path} --command='dotnet build /t:rebuild' --overwrite"
+        try:
+            _ = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        except subprocess.CalledProcessError as e:
+            print("Error executing command:", e)
+            print("Command output (stderr):", e.stderr)
+
+create_csharp()
