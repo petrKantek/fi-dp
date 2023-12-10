@@ -1,0 +1,1 @@
+"Uncontrolled data in arithmetic expression","Arithmetic operations on uncontrolled data that is not validated can cause overflows.","warning","This arithmetic expression depends on an [[""uncontrolled value""|""relative:///main.c:10:13:10:16""]], potentially causing an overflow.","/main.c","13","24","13","24"

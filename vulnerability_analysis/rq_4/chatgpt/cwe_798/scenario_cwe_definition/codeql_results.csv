@@ -1,0 +1,1 @@
+"Hard-coded credentials","Hard-coding credentials in source code may enable an attacker to gain unauthorized access.","warning","The hard-coded value ""your_username"" is used as [[""user name""|""relative:///index.js:9:9:9:23""]].","/index.js","9","9","9","23"
