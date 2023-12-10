@@ -1,4 +1,4 @@
-**codeql-db**
+**codeql_database**
 obj
 bin
 *.o
