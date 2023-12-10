@@ -46,8 +46,30 @@ def c():
         commands_to_run.append(cmd)
     run_parallel_commands(commands_to_run, max_workers=4)
 
-c()
-    
+def js():
+    root_dir = "vulnerability_analysis"
+    rqs = range(4, 5)
+    tools = ["chatgpt"]#["copilot", "tabnine", "chatgpt", "codegeex"]
+    cwes = ['79', '89', '78', '20', '22', '352', '434', '862', '476', '287', '502', '77', '798', '918', '362', '269', '94']
+    prompt_scenarios = ["secureval", "cwe_definition", "cwe_context"]
+    programs = itertools.product(rqs, tools, cwes, prompt_scenarios)
+    for rq, tool, cwe, scenario in tqdm(list(programs)):
+        # call codeql command in python subprocess
+        dir_path = os.path.join(root_dir, f"rq_{rq}", tool, f"cwe_{cwe}", f"scenario_{scenario}")
+        db_path = os.path.join(dir_path, "codeql_database")
+        output_path = os.path.join(dir_path, "codeql_results.csv")
+        # print("dir_path: ", dir_path)
+        # print("db_path: ", db_path)
+        cmd = f"C:\\Users\\pkantek\\Downloads\\codeql\\codeql database analyze {db_path} --format=csv --output={output_path}"
+        print(cmd)
+        try:
+            result = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            # print(f"dir_path: {dir_path}, Command output:", result.stdout)
+        except subprocess.CalledProcessError as e:
+            print("Error executing command:", e)
+            print("Command output (stderr):", e.stderr)
+
+js()
         # print("CMD >>>> ", cmd)
         # try:
         #     result = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
