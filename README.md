@@ -7,29 +7,29 @@
 ### Python
 
 ```bash
-codeql database create python-test-db --language=python --overwrite
+codeql database create codeql_database --language=python --overwrite
 ```
 
 ### C
 
 ```bash
-codeql database create codeql-db-rq_2-chatgpt-cwe_79-secureval --language=cpp --overwrite --command="make clean all"
+codeql database create codeql_database --language=cpp --overwrite --command="make clean all"
 ```
 
 ### C#
 
 ```powershell
-codeql database create codeql-db-rq_3-chatgpt-cwe_79-scenario_secureval --language=csharp --command='dotnet build /t:rebuild' --overwrite
+Remove-Item -Path codeql_database -Recurse -ErrorAction SilentlyContinue; codeql database create codeql_database --command='dotnet build /t:rebuild' --language=csharp
 ```
 
 ### Javascript
 
 ```bash
-codeql database create rq_4-codegeex-cwe_79-secureval --language=javascript --overwrite
+codeql database create codeql_database --language=javascript --overwrite
 ```
 
 ## Analyzing a CodeQL databse
 
 ```bash
-codeql database analyze codeql-db-rq_3-chatgpt-cwe_79-scenario_secureval --format=csv --output=codeql_results.csv
+codeql database analyze codeql_database --format=csv --output=codeql_results.csv
 ```
