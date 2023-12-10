@@ -1,8 +1,10 @@
-import os
-import itertools
-import subprocess
-from tqdm import tqdm
 import concurrent.futures
+import itertools
+import os
+import subprocess
+
+from tqdm import tqdm
+
 
 def create_python_chatgpt():
     root_dir = "vulnerability_analysis"
@@ -103,9 +105,10 @@ def create_csharp():
     for rq, tool, cwe, scenario in tqdm(list(programs)):
         dir_path = os.path.join(root_dir, f"rq_{rq}", tool, f"cwe_{cwe}", f"scenario_{scenario}")
         db_path = os.path.join(dir_path, "codeql_database")
-        pre_cmd_win = f"Remove-Item -Path {db_path} -Recurse -ErrorAction SilentlyContinue";
+        pre_cmd_win_ps = f"Remove-Item -Path {db_path} -Recurse -ErrorAction SilentlyContinue";
+        pre_cmd_win_cmd = f"if exist {db_path} rmdir /s /q {db_path}";
         pre_cmd_li = f"rm -rf {db_path}";
-        cmd = f"{pre_cmd_win}; /home/pkantek/codeql/codeql database create {db_path} --language=csharp --source-root=./{dir_path} --command='dotnet build /t:rebuild' --overwrite"
+        cmd = f'({pre_cmd_win_cmd}) && (codeql database create {db_path} --language=csharp --source-root=./{dir_path} --command="dotnet build /t:rebuild" --overwrite)'
         try:
             _ = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         except subprocess.CalledProcessError as e:
