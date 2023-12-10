@@ -1,7 +1,7 @@
 # Define the lists
 py = ['CWE-79', 'CWE-78', 'CWE-20', 'CWE-22', 'CWE-352', 'CWE-287', 'CWE-502', 'CWE-77', 'CWE-918', 'CWE-306', 'CWE-94', 'CWE-863', 'CWE-434', 'CWE-862']
 c = ['CWE-787', 'CWE-79', 'CWE-89', 'CWE-416', 'CWE-78', 'CWE-20', 'CWE-125', 'CWE-22', 'CWE-476', 'CWE-287', 'CWE-190', 'CWE-77', 'CWE-119', 'CWE-362', 'CWE-269']
-csharp = ['CWE-787', 'CWE-79', 'CWE-89', 'CWE-78', 'CWE-20', 'CWE-22', 'CWE-352', 'CWE-434', 'CWE-862', 'CWE-476', 'CWE-287', 'CWE-190', 'CWE-502', 'CWE-77', 'CWE-119', 'CWE-798', 'CWE-918', 'CWE-362', 'CWE-94']
+csharp = ['CWE-787', 'CWE-79', 'CWE-89', 'CWE-78', 'CWE-20', 'CWE-22', 'CWE-352', 'CWE-434', 'CWE-476', 'CWE-287', 'CWE-190', 'CWE-502', 'CWE-77', 'CWE-119', 'CWE-798', 'CWE-918', 'CWE-362', 'CWE-94']
 js = ['CWE-79', 'CWE-89', 'CWE-78', 'CWE-20', 'CWE-22', 'CWE-352', 'CWE-434', 'CWE-862', 'CWE-476', 'CWE-287', 'CWE-502', 'CWE-77', 'CWE-798', 'CWE-918', 'CWE-362', 'CWE-269', 'CWE-94']
 
 # Create sets from the lists
