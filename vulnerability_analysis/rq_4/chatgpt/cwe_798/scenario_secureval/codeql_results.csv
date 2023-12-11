@@ -1,0 +1,1 @@
+"Sensitive data read from GET request","Placing sensitive data in a GET request increases the risk of the data being exposed to an attacker.","warning","[[""Route handler""|""relative:///index.js:13:28:26:1""]] for GET requests uses query parameter as sensitive data.","/index.js","14","28","14","45"

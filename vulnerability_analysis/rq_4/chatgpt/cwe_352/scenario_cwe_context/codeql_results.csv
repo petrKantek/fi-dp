@@ -1,0 +1,2 @@
+"Clear text transmission of sensitive cookie","Sending sensitive information in a cookie without requring SSL encryption can expose the cookie to an attacker.","warning","Sensitive cookie sent without enforcing SSL encryption.","/index.js","16","9","20","2"
+"Hard-coded credentials","Hard-coding credentials in source code may enable an attacker to gain unauthorized access.","warning","The hard-coded value ""your-secret-key"" is used as [[""key""|""relative:///index.js:17:11:17:27""]].","/index.js","17","11","17","27"

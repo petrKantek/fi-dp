@@ -1,0 +1,1 @@
+"Server-side request forgery","Making a network request with user-controlled data in the URL allows for request forgery attacks.","error","The [[""URL""|""relative:///index.js:19:38:19:51""]] of this request depends on a [[""user-provided value""|""relative:///index.js:13:24:13:38""]].","/index.js","19","28","19","52"
