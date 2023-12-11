@@ -1,0 +1,4 @@
+"Use of a broken or weak cryptographic algorithm","Using broken or weak cryptographic algorithms can compromise security.","warning","[[""The block mode ECB""|""relative:///main.py:15:14:15:47""]] is broken or weak, and should not be used.
+[[""The cryptographic algorithm DES""|""relative:///main.py:15:14:15:47""]] is broken or weak, and should not be used.","/main.py","16","25","16","47"
+"Use of a broken or weak cryptographic algorithm","Using broken or weak cryptographic algorithms can compromise security.","warning","[[""The block mode ECB""|""relative:///main.py:23:14:23:47""]] is broken or weak, and should not be used.
+[[""The cryptographic algorithm DES""|""relative:///main.py:23:14:23:47""]] is broken or weak, and should not be used.","/main.py","25","25","25","57"

@@ -1,0 +1,2 @@
+"Use of insecure SSL/TLS version","Using an insecure SSL/TLS version may leave the connection vulnerable to attacks.","warning","Insecure SSL/TLS protocol version TLSv1 allowed by [[""call to ssl.create_default_context""|""relative:///main.py:11:11:11:61""]].
+Insecure SSL/TLS protocol version TLSv1_1 allowed by [[""call to ssl.create_default_context""|""relative:///main.py:11:11:11:61""]].","/main.py","16","9","16","15"

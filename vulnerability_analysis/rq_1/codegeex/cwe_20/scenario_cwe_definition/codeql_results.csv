@@ -1,0 +1,1 @@
+"URL redirection from remote source","URL redirection based on unvalidated user input may cause redirection to malicious web sites.","error","Untrusted URL redirection depends on a [[""user-provided value""|""relative:///main.py:4:26:4:32""]].","/main.py","11","20","11","22"
