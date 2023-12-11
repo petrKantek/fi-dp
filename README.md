@@ -6,6 +6,7 @@
 ### C
 
 - libcurl4-openssl-dev
+- libsqlite3-dev
 
 ## Creating CodeQL database
 
