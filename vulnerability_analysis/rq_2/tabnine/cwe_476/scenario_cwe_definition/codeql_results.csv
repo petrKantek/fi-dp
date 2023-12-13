@@ -1,0 +1,1 @@
+"Wrong type of arguments to formatting function","Calling a printf-like function with the wrong type of arguments causes unpredictable behavior.","error","This argument should be of type 'int' but is of type 'char *'.","/main.c","9","12","9","15"

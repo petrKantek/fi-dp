@@ -1,0 +1,1 @@
+"CGI script vulnerable to cross-site scripting","Writing user input directly to a web page allows for a cross-site scripting vulnerability.","error","Cross-site scripting vulnerability due to [[""this query data""|""relative:///main.c:9:18:9:23""]].","/main.c","15","56","15","59"

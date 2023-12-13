@@ -1,0 +1,2 @@
+"Wrong type of arguments to formatting function","Calling a printf-like function with the wrong type of arguments causes unpredictable behavior.","error","This argument should be of type 'int' but is of type 'char *'.","/main.c","14","12","14","17"
+"Uncontrolled data in arithmetic expression","Arithmetic operations on uncontrolled data that is not validated can cause overflows.","warning","This arithmetic expression depends on an [[""uncontrolled value""|""relative:///main.c:8:13:8:16""]], potentially causing an overflow.","/main.c","9","18","9","18"
