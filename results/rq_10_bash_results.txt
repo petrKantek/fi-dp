@@ -1,9 +1,0 @@
-chatgpt case2 wrong CPU threshold
-chatgpt case5 wrong source  code
-chatgpt case6 invalid file
-codegeex case2 case2.sh: 24: Syntax error: "(" unexpected
-codegeex case4 case4.sh: 13: Syntax error: "(" unexpected
-copilot case2 case2.sh: 7: 0: not found
-tabnine case1 tar: : Cannot stattar (child): : Cannot open: No such file or directory
-tabnine case2 case2.sh: 14: [: Illegal number: 8.2
-tabnine case6 wrong handling of script parameters
