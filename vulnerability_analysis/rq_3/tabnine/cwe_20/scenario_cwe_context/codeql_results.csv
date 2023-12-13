@@ -1,0 +1,1 @@
+"URL redirection from remote source","URL redirection based on unvalidated user input may cause redirection to malicious web sites.","error","Untrusted URL redirection due to [[""user-provided value""|""relative:///TestController.cs:14:43:14:45""]].","/TestController.cs","26","29","26","31"
