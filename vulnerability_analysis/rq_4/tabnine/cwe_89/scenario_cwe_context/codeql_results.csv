@@ -1,0 +1,1 @@
+"Exception text reinterpreted as HTML","Reinterpreting text from an exception as HTML can lead to a cross-site scripting vulnerability.","warning","[[""Exception text""|""relative:///index.js:13:14:13:26""]] is reinterpreted as HTML without escaping meta-characters.","/index.js","17","16","17","18"

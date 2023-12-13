@@ -1,0 +1,1 @@
+"Deserialization of user-controlled data","Deserializing user-controlled data may allow attackers to execute arbitrary code.","error","Unsafe deserialization depends on a [[""user-provided value""|""relative:///main.py:13:19:13:25""]].","/main.py","17","25","17","31"

@@ -1,0 +1,2 @@
+"Reflected server-side cross-site scripting","Writing user input directly to a web page allows for a cross-site scripting vulnerability.","error","Cross-site scripting vulnerability due to a [[""user-provided value""|""relative:///main.py:14:26:14:32""]].","/main.py","24","12","24","49"
+"Full server-side request forgery","Making a network request to a URL that is fully user-controlled allows for request forgery attacks.","error","The full URL of this request depends on a [[""user-provided value""|""relative:///main.py:14:26:14:32""]].","/main.py","24","12","24","44"

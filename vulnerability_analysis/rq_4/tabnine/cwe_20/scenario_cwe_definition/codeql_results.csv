@@ -1,0 +1,1 @@
+"Server-side URL redirect","Server-side URL redirection based on unvalidated user input may cause redirection to malicious web sites.","warning","Untrusted URL redirection depends on a [[""user-provided value""|""relative:///index.js:8:15:8:27""]].","/index.js","9","16","9","18"

@@ -1,0 +1,1 @@
+"Use of insecure SSL/TLS version","Using an insecure SSL/TLS version may leave the connection vulnerable to attacks.","warning","Insecure SSL/TLS protocol version TLSv1 specified by [[""call to ssl.wrap_socket""|""relative:///main.py:11:17:11:69""]].","/main.py","11","17","11","69"

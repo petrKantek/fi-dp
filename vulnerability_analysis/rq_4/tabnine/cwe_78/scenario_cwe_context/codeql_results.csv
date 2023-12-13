@@ -1,0 +1,4 @@
+"Missing rate limiting","An HTTP request handler that performs expensive operations without restricting the rate at which operations can be carried out is vulnerable to denial-of-service attacks.","warning","This route handler performs [[""a file system access""|""relative:///index.js:23:5:23:46""]], but is not rate-limited.
+This route handler performs [[""a file system access""|""relative:///index.js:24:5:24:33""]], but is not rate-limited.
+This route handler performs [[""a system command""|""relative:///index.js:26:20:29:6""]], but is not rate-limited.
+This route handler performs [[""a file system access""|""relative:///index.js:32:5:32:27""]], but is not rate-limited.","/index.js","11","14","36","1"

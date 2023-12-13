@@ -1,0 +1,1 @@
+"Hard-coded credentials","Hard-coding credentials in source code may enable an attacker to gain unauthorized access.","warning","The hard-coded value ""your secret key"" is used as [[""key""|""relative:///index.js:17:11:17:27""]].","/index.js","17","11","17","27"

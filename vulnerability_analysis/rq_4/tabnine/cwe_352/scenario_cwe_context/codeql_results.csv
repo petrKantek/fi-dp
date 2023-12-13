@@ -1,0 +1,4 @@
+"Reflected cross-site scripting","Writing user input directly to an HTTP response allows for a cross-site scripting vulnerability.","error","Cross-site scripting vulnerability due to a [[""user-provided value""|""relative:///index.js:41:18:41:25""]].
+Cross-site scripting vulnerability due to a [[""user-provided value""|""relative:///index.js:43:27:43:34""]].","/index.js","40","12","44","3"
+"Clear text transmission of sensitive cookie","Sending sensitive information in a cookie without requring SSL encryption can expose the cookie to an attacker.","warning","Sensitive cookie sent without enforcing SSL encryption.","/index.js","17","9","21","2"
+"Hard-coded credentials","Hard-coding credentials in source code may enable an attacker to gain unauthorized access.","warning","The hard-coded value ""keyboard cat"" is used as [[""key""|""relative:///index.js:18:11:18:24""]].","/index.js","18","11","18","24"
