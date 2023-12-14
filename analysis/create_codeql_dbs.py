@@ -6,10 +6,10 @@ import subprocess
 from tqdm import tqdm
 
 
-def create_python_chatgpt():
+def create_python():
     root_dir = "vulnerability_analysis"
     rqs = range(1, 2)
-    tools = ["chatgpt"]#["copilot", "tabnine", "chatgpt", "codegeex"]
+    tools = ["tabnine"]#["copilot", "tabnine", "chatgpt", "codegeex"]
     cwes = ["79", "78", "20", "22", "352", "287", "502", "77", "918", "94", "776", "89", "798", "252", "327"]
     prompt_scenarios = ["secureval", "cwe_definition", "cwe_context"]
     programs = itertools.product(rqs, tools, cwes, prompt_scenarios)
@@ -17,18 +17,14 @@ def create_python_chatgpt():
         # call codeql command in python subprocess
         dir_path = os.path.join(root_dir, f"rq_{rq}", tool, f"cwe_{cwe}", f"scenario_{scenario}")
         db_path = os.path.join(dir_path, "codeql_database")
-        # print("dir_path: ", dir_path)
-        # print("db_path: ", db_path)
-        cmd = f" /home/pkantek/codeql/codeql database create {db_path} --language=python --source-root=./{dir_path} --overwrite"
-        # print("CMD >>>> ", cmd)
+        cmd = rf"C:\Users\pkantek\Downloads\codeql\codeql database create {db_path} --language=python --source-root=./{dir_path} --overwrite"
         try:
-            result = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-            # print(f"dir_path: {dir_path}, Command output:", result.stdout)
+            _ = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         except subprocess.CalledProcessError as e:
             print("Error executing command:", e)
             print("Command output (stderr):", e.stderr)
 
-
+# create_python()
 def run_shell_command(command):
     try:
         result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -73,7 +69,7 @@ def create_c():
 def create_js():
     root_dir = "vulnerability_analysis"
     rqs = range(4, 5)
-    tools = ["chatgpt"]#["copilot", "tabnine", "chatgpt", "codegeex"]
+    tools = ["copilot", "tabnine", "codegeex"] # "chatgpt"
     cwes = ['79', '89', '78', '20', '22', '352', '434', '862', '476', '287', '502', '77', '798', '918', '362', '269', '94']
 
     prompt_scenarios = ["secureval", "cwe_definition", "cwe_context"]
@@ -84,14 +80,14 @@ def create_js():
         db_path = os.path.join(dir_path, "codeql_database")
         # print("dir_path: ", dir_path)
         # print("db_path: ", db_path)
-        cmd = f"/home/pkantek/codeql/codeql database create {db_path} --language=javascript --source-root=./{dir_path} --overwrite"
+        cmd = rf"C:\Users\pkantek\Downloads\codeql\codeql database create {db_path} --language=javascript --source-root=./{dir_path} --overwrite"
         try:
             result = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             # print(f"dir_path: {dir_path}, Command output:", result.stdout)
         except subprocess.CalledProcessError as e:
             print("Error executing command:", e)
             print("Command output (stderr):", e.stderr)
-
+create_js()
     # print(commands_to_run)
 
 def create_csharp():
@@ -114,5 +110,3 @@ def create_csharp():
         except subprocess.CalledProcessError as e:
             print("Error executing command:", e)
             print("Command output (stderr):", e.stderr)
-
-create_csharp()
