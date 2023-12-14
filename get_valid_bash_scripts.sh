@@ -1,19 +1,17 @@
 #!/bin/bash
 
-# Prompt user for directory path
-read -p "Enter the directory path: " directoryPath
+directoryPath="vulnerability_analysis/"
 
 # Initialize counter
 validScriptCount=0
-
 # Find all .sh files in the directory
 find "$directoryPath" -name "*.sh" | while read -r file
 do
+    bash -n "$file"
+    retVAl=$?
     # Check if it's a valid Bash script
-    if bash -n "$file" 2>/dev/null; then
-        validScriptCount=$((validScriptCount+1))
+    if [ $retVAl -eq 0 ]; then
+        validScriptCount=$((validScriptCount+=1))
     fi
+    echo "$validScriptCount"
 done
-
-# Print out the number of valid Bash scripts
-echo "Number of valid Bash scripts: $validScriptCount"
