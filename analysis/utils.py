@@ -15,7 +15,6 @@ def run_parallel_commands(commands, max_workers):
         for future in concurrent.futures.as_completed(futures):
             command = futures[future]
             try:
-                result = future.result()
-                # print(f"Command: {command}\nOutput:\n{result[1]}\nError:\n{result[2]}\n{'='*30}")
+                _ = future.result()
             except Exception as e:
                 print(f"Command: {command}\nError: {e}\n{'='*30}")

@@ -34,10 +34,8 @@ def process_csv_files(directory):
     df = pd.DataFrame(data)
     return df
 
-# Specify the root directory
 root_directory = 'vulnerability_analysis'
 
 result_df = process_csv_files(root_directory)
 
-# Display the resulting DataFrame
 print(result_df)
